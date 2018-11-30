@@ -10,7 +10,8 @@
 #enable headless mode 
 #request lightdm installed - apt install --no-install-recommends xorg lightdm for debian/ubuntu
 headless=true
-verbose=false
+#verbose=false
+verbose=true
 
 if [ "$headless" = true ] ; then
     export DISPLAY=:0 XAUTHORITY=/var/run/lightdm/root/:0
@@ -46,29 +47,32 @@ do
                 2[0-9])
                         newfanspeed="30"
                         ;;
-                3[0-9])
-                        newfanspeed="30"
+                3[0-4])
+                        newfanspeed="35"
                         ;;
-                4[0-4])
+                3[5-9])
                         newfanspeed="40"
                         ;;
-                4[5-9])
+                4[0-4])
                         newfanspeed="45"
                         ;;
-                5[0-4])
+                4[5-9])
                         newfanspeed="50"
                         ;;
-                5[5-6])
+                5[0-2])
                         newfanspeed="55"
                         ;;
-                5[7-9])
+                5[3-5])
                         newfanspeed="60"
                         ;;
-                6[0-5])
+                5[6-9])
                         newfanspeed="65"
                         ;;
-                6[6-9])
+                6[0-5])
                         newfanspeed="70"
+                        ;;
+                6[6-9])
+                        newfanspeed="75"
                         ;;
                 7[0-5])
                         newfanspeed="80"
@@ -87,7 +91,7 @@ do
             echo "gpu ${i} new fanspeed ${newfanspeed}"; 
         fi
         
-        sleep 10s
+        sleep 5s
     #increment gpu index
     i=$(($i+1))
     done
