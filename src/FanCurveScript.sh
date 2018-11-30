@@ -49,29 +49,32 @@ do
                 3[0-9])
                         newfanspeed="30"
                         ;;
-                4[0-9])
-                        newfanspeed="30"
-                        ;;
-                5[0-4])
+                4[0-4])
                         newfanspeed="40"
                         ;;
-                5[5-6])
+                4[5-9])
                         newfanspeed="45"
                         ;;
-                5[7-9])
+                5[0-4])
                         newfanspeed="50"
                         ;;
-                6[0-5])
+                5[5-6])
+                        newfanspeed="55"
+                        ;;
+                5[7-9])
                         newfanspeed="60"
                         ;;
-                6[6-9])
+                6[0-5])
                         newfanspeed="65"
                         ;;
-                7[0-5])
+                6[6-9])
                         newfanspeed="70"
                         ;;
+                7[0-5])
+                        newfanspeed="80"
+                        ;;
                 7[6-9])
-                        newfanspeed="85"
+                        newfanspeed="90"
                         ;;
                 *)
                         newfanspeed="100"
@@ -84,7 +87,7 @@ do
             echo "gpu ${i} new fanspeed ${newfanspeed}"; 
         fi
         
-        sleep 1s
+        sleep 10s
     #increment gpu index
     i=$(($i+1))
     done
